@@ -13,12 +13,16 @@ const route = new Router({
       path: '/',
       name: 'home',
       component: () => import('../components/Layout'),
-
       children: [
         {
           path: 'hello',
           name: 'hello',
           component: () => import('../components/HelloWorld')
+        },
+        {
+          path: 'ModelChoose',
+          name: 'ModelChoose',
+          component: () => import('../components/ModelTrain/ModelChoose')
         }
       ]
     }

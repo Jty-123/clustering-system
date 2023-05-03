@@ -19,15 +19,13 @@
         <el-col :span="4">
         <el-menu
         default-active="2"
-        class="el-menu-vertical-demo"
-        @open="handleOpen"
-        @close="handleClose">
+        class="el-menu-vertical-demo">
         <el-submenu index="1">
             <template slot="title">
                 <i class="el-icon-location"></i>
                 <span>模型训练</span>
             </template>
-          <el-menu-item>模型选择</el-menu-item>
+          <el-menu-item @click="jumpModelChoose">模型选择</el-menu-item>
           <el-menu-item>参数配置</el-menu-item>
           <el-menu-item>训练监督</el-menu-item>
         </el-submenu>
@@ -54,6 +52,11 @@ export default {
   data () {
     return {
     }
+  },
+  methods: {
+    jumpModelChoose () {
+      this.$router.push('ModelChoose')
+    }
   }
 }
 </script>
@@ -73,7 +76,7 @@ export default {
     line-height: 400px;
   }
   .el-main {
-    background-color: #E9EEF3;
+    background-color: #FFFFFF;
     color: #333;
     text-align: center;
     line-height: 160px;
