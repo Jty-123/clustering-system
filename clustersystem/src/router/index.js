@@ -31,8 +31,8 @@ route.beforeEach(async (to, from, next) => {
       next('/login')
     } else {
       next()
-    } 
-  } else{
+    }
+  } else {
     next()
   }
 })

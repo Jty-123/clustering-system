@@ -8,7 +8,7 @@
     </div>
     <div class="text-box">
         <h3>图像聚类系统</h3>
-        <p>大连理工大学</p>
+        <p>大连理工大学软件学院</p>
     </div>
     <div class="footer-box">
         <span class="footer-list">
@@ -27,6 +27,7 @@
     </div>
     <div class="right-footer-box">
        <el-button type="primary" @click="login">登录</el-button>
+       <el-button type="primary" @click="register">注册</el-button>
     </div>
     </div>
 </div>
@@ -55,6 +56,8 @@ export default {
     login () {
       this.authUser(this.loginForm.username, this.loginForm.password)
       this.$router.push('/')
+    },
+    register () {
     }
   }
 }
@@ -85,8 +88,8 @@ export default {
 .text-box {
     position: fixed;
     left: 8%;
-    top: 40%;
-    color: #fff;
+    top: 30%;
+    color: white;
     display: block;
     text-align: left;
 }
@@ -104,7 +107,7 @@ export default {
     position: fixed;
     left: 4%;
     top: 5%;
-    color: #fff;
+    color: white;
     text-align: left;
     display: flex;
     flex-direction: row;
@@ -169,8 +172,8 @@ export default {
     justify-content: space-around;
     right: 170px;
     width: 420px;
-    height: 380px; /* login的高度 */
-    padding: 5px 35px 20px 35px;
+    height: 300px; /* login的高度 */
+    padding: 0px 20px 0px 20px;
     background: rgba(255, 255, 255, 0.9);
     border-radius: 12px;
     overflow: hidden;
@@ -187,59 +190,5 @@ export default {
 .right-footer-box a:hover {
     color: rgb(75, 105, 254);
     opacity: 1;
-}
-/* 窗口变化会导致text-box隐藏 */
-@media screen and (max-width: 1000px) {
-    /* max screen size */
-    .text-box {
-        display: none;
-    }
-}
-/* 窗口自适应  登录/注册窗口 */
-@media screen and (max-width: 1000px) {
-    .context {
-        animation: fadeIn 0.25s linear;
-        display: flex;
-        justify-content: center;
-    }
-    .right-container {
-        right: auto;
-    }
-}
-@media screen and (max-width: 550px) {
-    .right-container {
-        background-color: transparent !important;
-        padding: 0 0;
-        height: auto;
-        width: 70%;
-    }
-    .con-background {
-        background: #fff;
-        background-size: cover;
-    }
-    .logo-box {
-        display: none;
-    }
-    .footer-box {
-        position: absolute;
-        left: 41%;
-        width: 150px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        overflow: hidden;
-        transition: all 0.5s;
-    }
-    .footer-box a {
-        color: rgb(0, 0, 0);
-    }
-    .footer-copyright {
-        color: rgb(100, 100, 100);
-        padding-top: 0.3rem;
-        padding-left: 2px;
-    }
-    .footer-line {
-        background: rgb(100, 100, 100);
-    }
 }
 </style>

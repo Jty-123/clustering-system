@@ -1,6 +1,20 @@
 <template>
-<el-container>
-    <el-header>基于对比学习的图像聚类系统</el-header>
+<el-container style="height: 900px; border: 1px solid #eee">
+    <el-header>
+      <i class="el-icon-cpu"></i>
+      基于对比学习的图像聚类系统
+      <el-dropdown trigger="hover" style="float: right; margin-right:20px">
+      <span class="el-dropdown-link">
+        <i class="el-icon-user-solid"></i>
+        admin
+        <i class="el-icon-arrow-down el-icon--right"></i>
+      </span>
+      <el-dropdown-menu slot="dropdown">
+        <el-dropdown-item icon="el-icon-plus">个人信息</el-dropdown-item>
+        <el-dropdown-item icon="el-icon-circle-close">退出登录</el-dropdown-item>
+      </el-dropdown-menu>
+    </el-dropdown>
+    </el-header>
     <el-container>
         <el-col :span="4">
         <el-menu
@@ -11,32 +25,19 @@
         <el-submenu index="1">
             <template slot="title">
                 <i class="el-icon-location"></i>
-                <span>导航一</span>
+                <span>模型训练</span>
             </template>
-        <el-menu-item-group>
-            <template slot="title">分组一</template>
-            <el-menu-item index="1-1">选项1</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
-        </el-menu-item-group>
-        <el-menu-item-group title="分组2">
-            <el-menu-item index="1-3">选项3</el-menu-item>
-        </el-menu-item-group>
-        <el-submenu index="1-4">
-            <template slot="title">选项4</template>
-            <el-menu-item index="1-4-1">选项1</el-menu-item>
-        </el-submenu>
+          <el-menu-item>模型选择</el-menu-item>
+          <el-menu-item>参数配置</el-menu-item>
+          <el-menu-item>训练监督</el-menu-item>
         </el-submenu>
         <el-menu-item index="2">
         <i class="el-icon-menu"></i>
-        <span slot="title">导航二</span>
-        </el-menu-item>
-        <el-menu-item index="3" disabled>
-        <i class="el-icon-document"></i>
-        <span slot="title">导航三</span>
+        <span slot="title">在线聚类</span>
         </el-menu-item>
         <el-menu-item index="4">
         <i class="el-icon-setting"></i>
-        <span slot="title">导航四</span>
+        <span slot="title">更多</span>
         </el-menu-item>
         </el-menu>
         </el-col>
@@ -59,16 +60,17 @@ export default {
 
 <style>
   .el-header, .el-footer {
-    background-color: #B3C0D1;
-    color: #333;
-    text-align: center;
+    background-color:#409EFF;
+    color: #303133;
+    text-align: left;
     line-height: 60px;
+    font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
   }
   .el-aside {
     background-color: #D3DCE6;
     color: #333;
     text-align: center;
-    line-height: 200px;
+    line-height: 400px;
   }
   .el-main {
     background-color: #E9EEF3;
@@ -85,5 +87,9 @@ export default {
   }
   .el-container:nth-child(7) .el-aside {
     line-height: 320px;
+  }
+  .el-dropdown-link {
+    cursor: pointer;
+    color: white;
   }
 </style>
